@@ -1,4 +1,4 @@
-Coding Style Guide
+Hướng dẫn về Coding Style - Coding Style Guide
 ==================
 
 Bộ quy tắc này dựa trên và mở rộng từ [PSR-1], basic coding standard
@@ -11,7 +11,7 @@ của người khác. Nó thực hiện điều đó bằng cách đặt ra nh�
 [PSR-1]: https://github.com/wataridori/php-coding-standard-vietnamese/blob/master/PSR-1.md
 
 
-1. Overview
+1. Khái quát chung
 -----------
 
 - Code phải tuân theo "coding style guide" PSR [[PSR-1]].
@@ -21,17 +21,17 @@ của người khác. Nó thực hiện điều đó bằng cách đặt ra nh�
 - Không có hard limit về độ dài của một dòng; soft limit phải là 120
   chữ. Một dòng nên có không quá 80 chữ.
 
-- Cần phải có một dòng trống ở sau phần định nghĩa `namespace`. Ngoài ra cũng cần có 
-  một dòng trống phía sau phần định nghĩa `use`.
+- Cần phải có một dòng trống ở sau phần khai báo `namespace`. Ngoài ra cũng cần có 
+  một dòng trống phía sau phần khai báo `use`.
 
-- Dấu mở ngặc nhọn dùng khi định nghĩa class phải được viết ở dòng mới (không viết cùng dòng với phần định nghĩa tên class), 
+- Dấu mở ngặc nhọn dùng khi khai báo class phải được viết ở dòng mới (không viết cùng dòng với phần khai báo tên class), 
   và dấu đóng ngoặc nhọn của một class phải được viết ở dòng mới sau khi kết thúc body của class.
 
-- Dấu mở ngặc nhọn dùng khi định nghĩa  phải được viết ở dòng mới (không viết cùng dòng với phần định nghĩa tên method), 
+- Dấu mở ngặc nhọn dùng khi khai báo phải được viết ở dòng mới (không viết cùng dòng với phần khai báo tên method), 
    và dấu đóng ngoặc nhọn của một method phải được viết ở dòng mới sau khi kết thúc body của method.
 
-- Phải luôn định nghĩa tính visibility (`public`, `protected` hay là `private`) của properties cũng như methods.
- `abstract` và `final` phải được định nghĩa phía trước tính visibility và `static` phải được định nghĩa sau tính visibility. 
+- Phải luôn khai báo tính visibility (`public`, `protected` hay là `private`) của properties cũng như methods.
+ `abstract` và `final` phải được khai báo phía trước tính visibility và `static` phải được khai báo sau tính visibility. 
 
 - Cần phải có một dấu cách phía sau những từ khoá Control structure (như `if`, `else`, `for` ...).
   Không được có dấu cách phía sau tên của method khi gọi hàm.
@@ -41,7 +41,7 @@ của người khác. Nó thực hiện điều đó bằng cách đặt ra nh�
 
 - Trong câu lệnh control structures, không được phép có dấu cách ở sau dấu mở ngặc tròn cũng như ở trước dấu đóng ngoặc tròn.
 
-### 1.1. Example
+### 1.1. Ví dụ
 
 Ví dụ dưới đây bao gồm một vài quy tắc đã được đề cập ở phần trên, overview:
 
@@ -73,7 +73,7 @@ class Foo extends Bar implements FooInterface
 }
 ```
 
-2. General
+2. Tổng thể
 ----------
 
 ### 2.1 Basic Coding Standard
@@ -104,11 +104,11 @@ Dòng trống có thể được thêm vào để code có thể được dễ �
 
 Không được phép có quá một statement trên một dòng.
 
-### 2.4. Indenting
+### 2.4. Canh lề - Indenting
 
 Code không dùng tab, mà phải sử dụng 4 dấu cách làm indent.
 
-### 2.5. Keywords and True/False/Null
+### 2.5. Keywords và True/False/Null
 
 Những [keywords] của PHP phải được viết thường. (không viết hoa)
 
@@ -117,14 +117,14 @@ Những constants của PHP là `true`, `false`, và `null` cũng cần phải v
 [keywords]: http://php.net/manual/en/reserved.keywords.php
 
 
-3. Namespace and Use Declarations
+3. Khai báo Namespace và Use
 ---------------------------------
 
-Cần phải có một dòng trắng phía sau định nghĩa `namespace`.
+Cần phải có một dòng trắng phía sau khai báo `namespace`.
 
-Những phần định nghĩa `use` phải được đặt phía sau phần định nghĩa `namespace`.
+Những phần khai báo `use` phải được đặt phía sau phần khai báo `namespace`.
 
-Phải dùng một từ `use` cho mỗi định nghĩa.
+Phải dùng một từ `use` cho mỗi khao báo.
 
 Phải có một dòng trắng phía sau đoạn code `use`.
 
@@ -143,12 +143,12 @@ use OtherVendor\OtherPackage\BazClass;
 ```
 
 
-4. Classes, Properties, and Methods
+4. Classes, Properties, và Methods
 -----------------------------------
 
 Từ class dưới đây được hiểu là cả những class bình thường, hay cả interfaces và traits.
 
-### 4.1. Extends and Implements
+### 4.1. Extends và Implements
 
 Từ khoá `extends` và `implements` phải được viết cùng dòng với tên class. 
 
@@ -168,9 +168,8 @@ class ClassName extends ParentClass implements \ArrayAccess, \Countable
 }
 ```
 
-Lists of `implements` MAY be split across multiple lines, where each
-subsequent line is indented once. When doing so, the first item in the list
-MUST be on the next line, and there MUST be only one interface per line.
+Danh sách những interface được `implements` có thể được viết trên nhiều dòng, trong đó mỗi dòng theo sau được indent 1 lần. 
+Khi thực hiện việc đó thì tên interface đầu tiên phải được đặt trên 1 dòng mới, và mỗi dòng chỉ được phép chứa tên 1 interface.
 
 ```php
 <?php
@@ -191,16 +190,15 @@ class ClassName extends ParentClass implements
 
 ### 4.2. Properties
 
-Visibility MUST be declared on all properties.
+Tính Visibility phải được khai báo ở mọi properties.
 
-The `var` keyword MUST NOT be used to declare a property.
+Không được dùng từ khoá `var` để khai báo một property.
 
-There MUST NOT be more than one property declared per statement.
+Trong một câu thì không được khai báo quá một property.
 
-Property names SHOULD NOT be prefixed with a single underscore to indicate
-protected or private visibility.
+Tên property không nên được prefix bởi dấu gạch dưới `_` để biểu thị tính protected hay private.
 
-A property declaration looks like the following.
+Khai báo property giống như sau.
 
 ```php
 <?php
@@ -214,18 +212,16 @@ class ClassName
 
 ### 4.3. Methods
 
-Visibility MUST be declared on all methods.
+Tính Visibility phải được khao báo ở mọi
 
-Method names SHOULD NOT be prefixed with a single underscore to indicate
-protected or private visibility.
+Tên Method không nên được prefix bởi dấu gạch dưới `_` để biểu thị tính protected hay private.
 
-Method names MUST NOT be declared with a space after the method name. The
-opening brace MUST go on its own line, and the closing brace MUST go on the
-next line following the body. There MUST NOT be a space after the opening
-parenthesis, and there MUST NOT be a space before the closing parenthesis.
+Khi khai báo tên method thì không được để một khoảng trắng ở phía sau tên method.
+Dấu mở ngoặc nhọn phải được nằm trên một dòng riêng, và dấu đóng ngoặc phải được nằm trên dòng ngay sau phần thân của 
+method.
+Không được có khoảng trắng sau dấu mở ngoặc đơn, và không được có khoảng trắng phía trước dấu đóng ngặc đơn.
 
-A method declaration looks like the following. Note the placement of
-parentheses, commas, spaces, and braces:
+Khai báo một hàm giống như sau. Chú ý đến vị trí của dấu ngặc đơn, dấu phẩy, khoảng trắng và dấu ngoặc nhọn.
 
 ```php
 <?php
@@ -242,11 +238,10 @@ class ClassName
 
 ### 4.4. Method Arguments
 
-In the argument list, there MUST NOT be a space before each comma, and there
-MUST be one space after each comma.
+Trong danh sách argument (đối số) thì không được có khoảng trắng trước mỗi dấu phẩy, và phải có một khoảng trắng
+sau mỗi dấu phẩy.
 
-Method arguments with default values MUST go at the end of the argument
-list.
+Những arguments của Method mà có giá trị mặc định phải được đặt ở cuối của danh sách argument.
 
 ```php
 <?php
@@ -261,13 +256,11 @@ class ClassName
 }
 ```
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
+Danh sách argument có thể được tách thành nhiều dòng, trong đó mỗi dòng theo sau được indent một lần. 
+Khi làm vậy thì argument đầu tiên trong danh sách phải được đặt ở trên một dòng mới, và mỗi dòng chỉ được phép có một argument.
 
-When the argument list is split across multiple lines, the closing parenthesis
-and opening brace MUST be placed together on their own line with one space
-between them.
+Khi mà danh sách argument được chia làm nhiều dòng, thì dấu đóng ngoặc đơn và dấu mở ngoặc nhọn phải được đặt cùng nhau
+trên một dòng, với một khoảng trắng ở giữa.
 
 ```php
 <?php
@@ -285,13 +278,11 @@ class ClassName
 }
 ```
 
-### 4.5. `abstract`, `final`, and `static`
+### 4.5. `abstract`, `final`, và `static`
 
-When present, the `abstract` and `final` declarations MUST precede the
-visibility declaration.
+Khi được sử dụng, `abstract` và `final` phải được đặt trước phần khai báo visibility.
 
-When present, the `static` declaration MUST come after the visibility
-declaration.
+Khi được sử dụng, `static` phải được đặt sau phần khai báo visibility.
 
 ```php
 <?php
@@ -310,13 +301,13 @@ abstract class ClassName
 }
 ```
 
-### 4.6. Method and Function Calls
+### 4.6. Gọi Method và Function 
 
-When making a method or function call, there MUST NOT be a space between the
-method or function name and the opening parenthesis, there MUST NOT be a space
-after the opening parenthesis, and there MUST NOT be a space before the
-closing parenthesis. In the argument list, there MUST NOT be a space before
-each comma, and there MUST be one space after each comma.
+Khi gọi một method hay một function, không được phép có khoảng trắng giữa tên của method hay function và dấu mở ngoặc đơn.
+Không được phép có khoảng trắng sau dấu mở ngoặc đơn.
+Và không được phép có khoảng trắng trước dấu đóng ngoặc đơn.
+Trong danh sách argument, không được phép có khoảng trắng trước mỗi dấu phẩy, 
+và phải có một khoảng trắng sau mỗi dấu phẩy.
 
 ```php
 <?php
@@ -325,9 +316,8 @@ $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
 ```
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
+Danh sách argument có thể được tách ra thành nhiều dòng, trong đó mỗi dòng theo sau được indent một lần.
+Khi làm như vậy thì argument đầu tiên phải được đặt trên một dòng mới, và mỗi dòng chỉ được phép chứa một argument.
 
 ```php
 <?php
@@ -341,26 +331,23 @@ $foo->bar(
 5. Control Structures
 ---------------------
 
-The general style rules for control structures are as follows:
+Những quy tắc chung khi viết Control Structures bao gồm:
 
-- There MUST be one space after the control structure keyword
-- There MUST NOT be a space after the opening parenthesis
-- There MUST NOT be a space before the closing parenthesis
-- There MUST be one space between the closing parenthesis and the opening
-  brace
-- The structure body MUST be indented once
-- The closing brace MUST be on the next line after the body
+- Phải có một khoảng trắng sau control structure keyword
+- Không được có một khoảng trắng sau dấu mở ngoặc đơn  
+- Không được có một khoảng trắng trước dấu đóng ngoặc đơn 
+- Phải có một khoảng trắng sau đấu đóng ngoặc đơn và trước dấu mở ngoặc nhọn
+- Phần thân của structure phải được indent một lần 
+- Dấu đóng ngoặc nhọn phỉa được đặt trên một dòng mới sau phần thân
 
-The body of each structure MUST be enclosed by braces. This standardizes how
-the structures look, and reduces the likelihood of introducing errors as new
-lines get added to the body.
-
+Phần thân của mỗi structure phải được đặt trong dấu đóng mở ngoặc kép. Điều này sẽ làm tiêu chuẩn hoá cách viết structures,
+và làm giảm thiểu việc phát sinh ra lỗi khi mà có những dòng mới được thêm vào phần thân.
 
 ### 5.1. `if`, `elseif`, `else`
 
-An `if` structure looks like the following. Note the placement of parentheses,
-spaces, and braces; and that `else` and `elseif` are on the same line as the
-closing brace from the earlier body.
+Một `if` structure được viết như sau. 
+Hãy chú ý đến vị trí của dấu ngoặc đơn, khoảng trắng, dấu ngoặc nhọn. `else` và `elseif` được đặt trên cùng một dòng 
+với dấu đóng ngoặc nhọn của phần body phía trước. 
 
 ```php
 <?php
@@ -373,17 +360,15 @@ if ($expr1) {
 }
 ```
 
-The keyword `elseif` SHOULD be used instead of `else if` so that all control
-keywords look like single words.
-
+Từ khoá `elseif` nên được dùng thay cho `else if`, để mọi control keywords chỉ là một từ đơn.
 
 ### 5.2. `switch`, `case`
 
-A `switch` structure looks like the following. Note the placement of
-parentheses, spaces, and braces. The `case` statement MUST be indented once
-from `switch`, and the `break` keyword (or other terminating keyword) MUST be
-indented at the same level as the `case` body. There MUST be a comment such as
-`// no break` when fall-through is intentional in a non-empty `case` body.
+Một `switch` structure được viết như sau.
+Hãy chú ý đến vị trí của dấu ngoặc đơn, khoảng trắng và dấu ngoặc nhọn. 
+Phần `case` phải được indent một lần so với `switch`, và `break` keyword (hay các keyword ngắt khác) phải được indent giống 
+với phần thân của `case`.
+Phải có một comment kiểu như `// no break` nếu phần thân của `case` không trống, và được cố tình cho qua (không có break)
 
 ```php
 <?php
@@ -408,8 +393,8 @@ switch ($expr) {
 
 ### 5.3. `while`, `do while`
 
-A `while` statement looks like the following. Note the placement of
-parentheses, spaces, and braces.
+Một câu lệnh `while` được viết như sau.
+Hãy chú ý vào vị trí của dấu ngoặc đơn, khoảng trắng và dấu ngoặc nhọn.
 
 ```php
 <?php
@@ -418,8 +403,8 @@ while ($expr) {
 }
 ```
 
-Similarly, a `do while` statement looks like the following. Note the placement
-of parentheses, spaces, and braces.
+Tương tự như vậy, một câu lệnh `do while` được viết như sau. 
+Hãy chú ý vào vị trí của dấu ngoặc đơn, khoảng trắng và dấu ngoặc nhọn.
 
 ```php
 <?php
@@ -430,8 +415,8 @@ do {
 
 ### 5.4. `for`
 
-A `for` statement looks like the following. Note the placement of parentheses,
-spaces, and braces.
+Một câu lệnh `for` được viết như sau.
+Hãy chú ý vào vị trí của dấu ngoặc đơn, khoảng trắng và dấu ngoặc nhọn.
 
 ```php
 <?php
@@ -442,8 +427,8 @@ for ($i = 0; $i < 10; $i++) {
 
 ### 5.5. `foreach`
 
-A `foreach` statement looks like the following. Note the placement of
-parentheses, spaces, and braces.
+Một câu lệnh `foreach` được viết như sau.
+Hãy chú ý vào vị trí của dấu ngoặc đơn, khoảng trắng và dấu ngoặc nhọn.
 
 ```php
 <?php
@@ -454,8 +439,8 @@ foreach ($iterable as $key => $value) {
 
 ### 5.6. `try`, `catch`
 
-A `try catch` block looks like the following. Note the placement of
-parentheses, spaces, and braces.
+Một block `try catch` được viết như sau.
+Hãy chú ý vào vị trí của dấu ngoặc đơn, khoảng trắng và dấu ngoặc nhọn.
 
 ```php
 <?php
@@ -471,24 +456,23 @@ try {
 6. Closures
 -----------
 
-Closures MUST be declared with a space after the `function` keyword, and a
-space before and after the `use` keyword.
+Closures phải được định nghĩa mới một khoảng trắng phía sau keywork `function`, và một khoảng trắng ở phía trước cũng 
+như phía sau của keywork `use`.
 
-The opening brace MUST go on the same line, and the closing brace MUST go on
-the next line following the body.
+Dấu mở ngoặc ngọn phải được đặt ở cùng dòng, và dấu đóng ngoặc nhọn phải được đặt ở một dòng mời phía sau phần thân.
 
-There MUST NOT be a space after the opening parenthesis of the argument list
-or variable list, and there MUST NOT be a space before the closing parenthesis
-of the argument list or variable list.
+Không được phép có một khoảng trắng ở phía sau dấu mở ngoặc đơn của phần khai báo danh sách argument hay variable,
+và không được phép có một khoảng trắng ở phía trước dấu đóng ngoặc đơn của phần khai báo danh sách argument hay variable.
 
-In the argument list and variable list, there MUST NOT be a space before each
-comma, and there MUST be one space after each comma.
+Trong danh sách arugment hay variable, không được phép có khoảng trắng trước mỗi dấu phẩy, và phải có một khoảng trắng
+phía sau mỗi dấu phẩy.
 
-Closure arguments with default values MUST go at the end of the argument
-list.
+Arguments của Closure mà có giá trị mặc định thì phải được đặt ở cuối của danh sách argument.
 
-A closure declaration looks like the following. Note the placement of
-parentheses, commas, spaces, and braces:
+Cách định nghĩa một closure trông như sau.
+
+A closure declaration looks like the following. 
+Hãy chú ý vào vị trí của dấu ngoặc đơn, dấu phẩy, khoảng trắng và dấu ngoặc nhọn.
 
 ```php
 <?php
@@ -501,17 +485,14 @@ $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
 };
 ```
 
-Argument lists and variable lists MAY be split across multiple lines, where
-each subsequent line is indented once. When doing so, the first item in the
-list MUST be on the next line, and there MUST be only one argument or variable
-per line.
+Danh sách argument và danh sách variable có thể được tách ra làm nhiều dòng, trong đó mỗi dòng theo sau được indent 
+một lần. Khi làm như vậy thì argument hay variable đầu tiên phải được đặt ở trên một dòng mới, và mỗi dòng chỉ được phép
+chứa một argument hay một variable.
 
-When the ending list (whether or arguments or variables) is split across
-multiple lines, the closing parenthesis and opening brace MUST be placed
-together on their own line with one space between them.
+Khi mà kết thúc của danh sách (kể cả arguments hay variables) được chia thành nhiều dòng, 
+thì dấu đóng ngoặc đơn và dấu mở ngoặc nhọn phải được đặt cùng nhau trên một dòng, với một khoảng trắng ở giữa.
 
-The following are examples of closures with and without argument lists and
-variable lists split across multiple lines.
+Dưới đây là những ví dụ về các closures có và không có danh sách argument hay variable được chia thành nhiều dòng.
 
 ```php
 <?php
@@ -560,8 +541,8 @@ $shortArgs_longVars = function ($arg) use (
 };
 ```
 
-Note that the formatting rules also apply when the closure is used directly
-in a function or method call as an argument.
+Chú ý rằng những quy tắc trên còn được áp dụng khi một closure được sử dụng trục tiếp như một argument trong một lời gọi 
+hàm hay method.
 
 ```php
 <?php
@@ -575,25 +556,24 @@ $foo->bar(
 ```
 
 
-7. Conclusion
+7. Kết luận
 --------------
 
-There are many elements of style and practice intentionally omitted by this
-guide. These include but are not limited to:
+Có rất nhiều yếu tố về style hay practice khác được cố tình bỏ qua trong hướng dẫn này. Có thể kể ra như:
 
-- Declaration of global variables and global constants
+- Khai báo biến global (global variables) hay hằng global (global constants) 
 
-- Declaration of functions
-
-- Operators and assignment
+- Khai báo hàm (functions)
+ 
+- Toán tử và phép gán
 
 - Inter-line alignment
 
-- Comments and documentation blocks
+- Khối Comments và Documentation 
 
-- Class name prefixes and suffixes
+- Tiền tố và hậu tố trong tên Class
 
 - Best practices
 
-Future recommendations MAY revise and extend this guide to address those or
-other elements of style and practice.
+Những recommendations sau này có thể xem xét lại và mở rộng hướng dẫn này để đề cập đến những yếu tố về style hay practice 
+ở trên hay hoàn toàn khác.

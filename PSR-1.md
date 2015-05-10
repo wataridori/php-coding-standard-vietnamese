@@ -7,7 +7,7 @@ tính tương kết giữa code PHP được chia sẻ.
 [PSR-0]: https://github.com/wataridori/php-coding-standard-vietnamese/blob/master/PSR-0.md
 [PSR-4]: https://github.com/wataridori/php-coding-standard-vietnamese/blob/master/PSR-0.md
 
-1. Overview
+1. Khái quát chung
 -----------
 
 - Files chỉ được sử dụng tag là `<?php` và `<?=` .
@@ -50,8 +50,7 @@ trực tiếp đến việc định nghĩa classes, functions, constants ... *th
 việc including file*
 
 
-"Side effects" bao gồm những việc sau (không phải là tất cả): tạo output, 
-"Side effects" include but are not limited to: generating output, sử dụng `require`  `include`, hoặc
+"Side effects" bao gồm những việc sau (không phải là tất cả): tạo output, sử dụng `require`  `include`, hoặc
 kết nối đến external services, thay đổi file ini setting, emit errors hay exceptions, 
 chỉnh sửa biến global hay static, đọc và viết file ...
 
@@ -95,7 +94,7 @@ if (! function_exists('bar')) {
 ```
 
 
-3. Namespace and Class Names
+3. Namespace và tên Class
 ----------------------------
 
 Namespaces và tên classes phải tuân theo quy chuẩn "autoloading" của PSR: [[PSR-0], [PSR-4]].
@@ -128,7 +127,7 @@ class Vendor_Model_Foo
 }
 ```
 
-4. Class Constants, Properties, and Methods
+4. Class Constants, Properties, và Methods
 -------------------------------------------
 
 Từ class dưới đây được hiểu là cả những class bình thường, hay cả interfaces và traits.
